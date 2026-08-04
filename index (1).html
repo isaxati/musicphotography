@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Izzy — Concert & Event Photography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a12;
+    --text: #f4f2ec;
+    --muted: rgba(244,242,236,0.72);
+    --line: rgba(244,242,236,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center 30%;
+    background-image:
+      linear-gradient(180deg, rgba(10,10,18,0.1) 0%, rgba(10,10,18,0.5) 65%, rgba(10,10,18,0.88) 100%),
+      url("photos/hero.jpg");
+  }
+
+  .hero-top {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem 2.5rem;
+    gap: 1.75rem;
+  }
+
+  .hero-top a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+
+  .hero-top a:hover { opacity: 1; }
+
+  .hero-bottom { padding: 0 2.5rem 3.5rem; }
+
+  .hero-bottom h1 {
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.75rem;
+  }
+
+  .hero-meta p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 320px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn:hover {
+    background: rgba(244,242,236,0.08);
+    border-color: rgba(244,242,236,0.5);
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 4px;
+  }
+
+  .gallery figure {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: #14141f;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .gallery figure:hover img { transform: scale(1.04); }
+
+  footer {
+    padding: 4rem 2.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(244,242,236,0.1);
+    margin-top: 4px;
+  }
+
+  footer a {
+    color: var(--text);
+    text-decoration: none;
+    opacity: 0.85;
+  }
+
+  footer a:hover { opacity: 1; }
+
+  .footer-links { display: flex; gap: 1.5rem; }
+
+  @media (max-width: 640px) {
+    .hero-top { padding: 1.5rem 1.25rem; gap: 1.25rem; }
+    .hero-bottom { padding: 0 1.25rem 2.5rem; }
+    .hero-meta { align-items: flex-start; flex-direction: column; }
+    footer { padding: 3rem 1.25rem; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-top">
+    <a href="https://instagram.com/Isaxati" target="_blank">Instagram</a>
+    <a href="mailto:you@example.com">Contact</a>
+  </div>
+
+  <div class="hero-bottom">
+    <h1>Isabel Mwiraria</h1>
+    <div class="hero-meta">
+      <p>Concert &amp; Event Photography</p>
+      <a class="btn" href="mailto:you@example.com">Book a Shoot</a>
+    </div>
+  </div>
+</div>
+
+<div class="gallery">
+  <figure><img src="photos/photo-01.jpg" alt="Concert photo 1"></figure>
+  <figure><img src="photos/photo-02.jpg" alt="Concert photo 2"></figure>
+  <figure><img src="photos/photo-03.jpg" alt="Concert photo 3"></figure>
+  <figure><img src="photos/photo-04.jpg" alt="Concert photo 4"></figure>
+  <figure><img src="photos/photo-05.jpg" alt="Concert photo 5"></figure>
+  <figure><img src="photos/photo-06.jpg" alt="Concert photo 6"></figure>
+</div>
+
+<footer>
+  <div>© 2026 Isabel Mwiraria</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/Isaxati" target="_blank">Instagram</a>
+    <a href="mailto:you@example.com">you@example.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
